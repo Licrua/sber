@@ -16,15 +16,14 @@ const UserList = styled.div`
 const User = styled.article`
   display: flex;
   flex-direction: column;
-  background-color: #ffffffdd;
   border-radius: 16px;
-  background-image: url('/img/user-profile-icon-abstract-digital-design-blue-background-isolated-172062850.webp');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+    url('/img/user-profile-icon-abstract-digital-design-blue-background-isolated-172062850.webp')
+      center/cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   backdrop-filter: blur(5px);
+  z-index: 2;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
@@ -64,8 +63,8 @@ function HomePage() {
   const [sorted, setSorted] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 2;
-  const totalPages = Math.ceil(sortedUsers.length / usersPerPage);
   const sortedUsers = sortUsers(list, sorted);
+  const totalPages = Math.ceil(sortedUsers.length / usersPerPage);
   const paginatedUsers = paginateUsers(sortedUsers, currentPage, usersPerPage);
 
   useEffect(() => {

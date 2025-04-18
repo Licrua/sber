@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -41,12 +41,16 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     border: none;
     border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 0 #2c3e50;
     cursor: pointer;
     font-size: 14px;
   }
 
   button:hover {
-    background-color: #0254b3;
+ transform: translateY(2px);
+  box-shadow: 0 2px 0 #2c3e50;
+
   }
 `;
 

@@ -14,6 +14,7 @@ const Comment = styled.div`
 `;
 
 const ReturnCross = styled.button `
+	all: unset;
 	font-size: 20px;
 	position: absolute;
 	top: 10px;
